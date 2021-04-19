@@ -9,6 +9,8 @@ composer導入済み
 あとは以下の流れで好きなlaravelのverを入れればOK
 
 ### すでにあるプロジェクトにdocker環境を導入する場合
+参考：https://qiita.com/ucan-lab/items/56c9dc3cf2e6762672f4#%E7%92%B0%E5%A2%83%E3%81%AE%E5%86%8D%E6%A7%8B%E7%AF%89
+環境の再構築の章を見る。
 
 プロジェクトのルートディレクトリに、
  - docker-compose.yml
