@@ -15,8 +15,6 @@ composer導入済み
  - infraフォルダ
 をコピーする。
 
-`docker-compose up -d --build`
-
 #### docker-compose.ymlの記述を修正する
 appとwebのvolumes:のマウントするディレクトリを以下のようにルートディレクトリ上に設定する。
 
@@ -42,11 +40,17 @@ services:
     working_dir: /work
 ```
 
+dockerのビルドと立ち上げをする  
+`docker-compose up -d --build`
+
 アプリケーションのコンテナに入る
 `docker-compose exec [コンテナ名] bash`  
 
 コンポーザーインストール
 `composer install`
+
+以下のサイトを開き、既存プロジェクトの画面が開けばOK    
+http://127.0.0.1:10080/
   
 ### 新規でプロジェクトを作成する場合
 
