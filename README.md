@@ -1,5 +1,5 @@
 やること  
-backendディレクトリに入っている「DS.store」を消す。
+ルート、backendディレクトリに入っている「DS.store」を消す。
 
 参考サイト： 
 https://qiita.com/ucan-lab/items/56c9dc3cf2e6762672f4  
