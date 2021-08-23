@@ -69,7 +69,12 @@ php artisan -V  // バージョン確認
 
 composer create-project --prefer-dist "laravel/laravel=７.*" .  
 を実行後、エラーになる場合  
+
+1. 以下コマンドをコンテナにログインせずに入れる。
+docker compose exec app composer create-project --prefer-dist "laravel/laravel=7.*" .
   
+2. .DS_storeが入っていないか確認する
+
 appコンテナに入り、
 `ls -a`
 を実行する  
