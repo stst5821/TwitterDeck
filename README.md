@@ -12,12 +12,12 @@ dockerのビルドと立ち上げをする
 `docker-compose up -d --build`
 
 以下のコマンドでコンテナ内に入りlaravelのインストールを行う。
-`$ docker compose exec app bash`
-`$ composer create-project --prefer-dist "laravel/laravel=9.*" .`
-`$ chmod -R 777 storage bootstrap/cache`
+`$ docker compose exec app bash`  
+`$ composer create-project --prefer-dist "laravel/laravel=9.*" .`  
+`$ chmod -R 777 storage bootstrap/cache`  
 
-インストールされたか確認する
-`$ php artisan -V`
+インストールされたか確認する  
+`$ php artisan -V`  
 
-以下のサイトを開き、Laravelの画面が開けばOK    
+以下のサイトを開き、Laravelの画面が開けばOK  
 http://localhost:8080/
