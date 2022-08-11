@@ -11,7 +11,7 @@ mysql mysql/mysql-server:8.0
 dockerのビルドと立ち上げをする  
 `docker-compose up -d --build`
 
-以下のコマンドでコンテナ内に入りlaravelのインストールを行う。
+以下のコマンドでコンテナ内に入りlaravelのインストールを行う。  
 `$ docker compose exec app bash`  
 `$ composer create-project --prefer-dist "laravel/laravel=9.*" .`  
 `$ chmod -R 777 storage bootstrap/cache`  
