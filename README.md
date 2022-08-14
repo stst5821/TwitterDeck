@@ -1,6 +1,7 @@
 ## 参考サイト
-https://qiita.com/ucan-lab/items/56c9dc3cf2e6762672f4  
-  
+Laravel6.xとVue Routerでvue.jsのSPA構築  
+https://reffect.co.jp/laravel/laravel-vue-router-single-page-application#routerjs
+
 ## コンテナ  
 nginx nginx:1.20-alpine
 php php:8.1-fpm-buster
