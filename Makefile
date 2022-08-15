@@ -5,4 +5,4 @@ stop:
 build:
 		docker compose build
 login:
-		docker compose exec app bash
+		docker exec -it php-tw bash

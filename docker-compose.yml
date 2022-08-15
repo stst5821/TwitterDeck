@@ -1,24 +1,46 @@
-version: "3.9"
+version: '3'
+
 services:
-  app:
-    build: ./infra/php
-    volumes:
-      - ./src:/data
-
-  web:
-    image: nginx:1.20-alpine
+  nginx:
+    container_name: nginx-tw
+    build:
+      context: .
+      dockerfile: docker/nginx/Dockerfile
     ports:
-      - 8080:80
+      - 81:80
     volumes:
-      - ./src:/data
-      - ./infra/nginx/default.conf:/etc/nginx/conf.d/default.conf
-    working_dir: /data
-
-  # 追記
-  db:
-    build: ./infra/mysql
+      - ./src:/var/www/html
+      - ./docker/nginx/default.conf:/etc/nginx/conf.d/default.conf
+    depends_on:
+      - php
+  php:
+    container_name: php-tw
+    build:
+      context: .
+      dockerfile: docker/php/Dockerfile
     volumes:
-      - db-store:/var/lib/mysql
-
+      - ./src:/var/www/html
+      - composer-volume:/var/www/php/vendor
+      - ./docker/php/php.ini:/usr/local/etc/php/php.ini
+    depends_on:
+      - mysql
+    working_dir: /var/www/html
+#    command: 'php artisan serve --host 0.0.0.0'
+  mysql:
+    container_name: mysql-tw
+    image: mysql:5.7
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: tweetdeck
+      MYSQL_USER: tweetdeck
+      MYSQL_PASSWORD: tweetdeck
+    volumes:
+      - ./docker/mysql/my.cnf:/etc/my.cnf
+      - ./docker/mysql/sql:/docker-entrypoint-initdb.d
+      - mysql-volume:/var/lib/mysql
+    ports:
+      - 3307:3306
 volumes:
-  db-store:
+  composer-volume:
+  mysql-volume:
+  node-modules-volume:
