@@ -20,7 +20,7 @@ Route::name('articles.')->group(function () {
 
     // 編集
     Route::get('/articles/{article}/edit', 'ArticleController@edit')->name('edit');
-    Route::post('/articles/{article}', 'ArticleController@update')->name('update');
+    Route::PATCH('/articles/{article}', 'ArticleController@update')->name('update');
 
     // 削除
     Route::delete('/articles/{article}', 'ArticleController@destroy')->name('destroy');
